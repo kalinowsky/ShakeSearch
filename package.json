@@ -9,7 +9,6 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build-fe": "cd client/ && yarn build",
-    "start": "yarn build-fe && node server/index.js"
+    "start": "node server/index.js"
   }
 }
