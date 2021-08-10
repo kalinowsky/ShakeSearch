@@ -24,7 +24,7 @@ const searchFull = (text) => {
     const regEx = new RegExp(text, "i");
     const result = [];
 
-    fs.readFile("text.txt", "utf8", function (err, contents) {
+    fs.readFile("server/text.txt", "utf8", function (err, contents) {
       console.log(err);
       let lines = contents.toString().split("\n");
       lines.forEach((line, i) => {
