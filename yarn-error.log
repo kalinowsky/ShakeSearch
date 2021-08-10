@@ -1,0 +1,53 @@
+Arguments: 
+  /Users/tomek/.nvm/versions/node/v10.15.3/bin/node /Users/tomek/.nvm/versions/node/v10.15.3/bin/yarn start
+
+PATH: 
+  /Users/tomek/Downloads/google-cloud-sdk/bin:/Users/tomek/.nvm/versions/node/v10.15.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/tomek/Downloads/google-cloud-sdk/bin:/Users/tomek/.nvm/versions/node/v10.15.3/bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  10.15.3
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/tomek/Projects/text-search/package.json: Unexpected token / in JSON at position 100
+      at JSON.parse (<anonymous>)
+      at /Users/tomek/.nvm/versions/node/v10.15.3/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/tomek/.nvm/versions/node/v10.15.3/lib/node_modules/yarn/lib/cli.js:304:30)
+      at /Users/tomek/.nvm/versions/node/v10.15.3/lib/node_modules/yarn/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "text-search",
+    "version": "1.0.0",
+    "main": "server/index.js",
+    "license": "MIT",
+    // "workspaces": {
+    //   "packages": [
+    //     "packages/**"
+    //   ],
+    //   "nohoist": [
+    //     "/client"
+    //   ]
+    // },
+    "dependencies": {
+      "@types/node": "^16.4.13",
+      "express": "^4.17.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+      "build-fe": "cd client/ && yarn build",
+      "start": "yarn build-fe && yarn start"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
