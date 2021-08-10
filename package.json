@@ -1,11 +1,14 @@
 {
   "name": "text-search",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server/index.js",
   "license": "MIT",
   "dependencies": {
     "@types/node": "^16.4.13",
     "express": "^4.17.1"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server/index.js"
+  }
 }
