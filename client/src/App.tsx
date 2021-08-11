@@ -1,14 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import { Search } from "./Search";
 
-function App() {
-  return <TestWrapper>Styled components test</TestWrapper>;
-}
+const App = () => {
+  return (
+    <Search
+      onSearch={(v) => {
+        console.log(v);
+      }}
+    />
+  );
+};
 
 export default App;
-
-const TestWrapper = styled.div`
-  background-color: red;
-  height: 100px;
-  width: 100px;
+const PageWrapper = styled.div`
+  background-color: #e1ddd7;
 `;
