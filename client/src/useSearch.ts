@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { F1, mkFetched, mkFetchError, mkFetching, mkNotFetched } from "./utils";
-import { Async, F0 } from "./utils";
-
-const URL =
-  "https://d3p0y7b1b87cj.cloudfront.net/production-plentific-static/api-cache/find-a-pro/api/v1/categories/all.json";
+import { Async } from "./utils";
 
 export const useSearch = (): {
   results: Async<any[]>;
@@ -11,12 +8,11 @@ export const useSearch = (): {
 } => {
   const [results, setResults] = useState<Async<any[]>>(mkNotFetched());
 
-  const search = async () => {
+  const search = async (phrase: string) => {
     setResults(mkFetching());
     try {
-      const response = await fetch(URL);
+      const response = await fetch(`/search/${phrase}`);
       const data = await response.json();
-      console.log({ data });
       setResults(mkFetched(data));
     } catch (err) {
       setResults(mkFetchError(err));
