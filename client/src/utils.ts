@@ -20,3 +20,14 @@ export type Fetching = State<"Fetching">;
 export type Fetched<T> = ValueState<"Fetched", T>;
 export type FetchError = ValueState<"FetchError", string>;
 export type Async<T> = NotFetched | Fetching | Fetched<T> | FetchError;
+
+export const mkNotFetched = (): NotFetched => ({ type: "NotFetched" });
+export const mkFetching = (): Fetching => ({ type: "Fetching" });
+export const mkFetched = <T>(value: T): Fetched<T> => ({
+  type: "Fetched",
+  value,
+});
+export const mkFetchError = (err: string): FetchError => ({
+  type: "FetchError",
+  value: err,
+});

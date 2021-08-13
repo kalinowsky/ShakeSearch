@@ -22,7 +22,7 @@ app.listen(port);
 const searchFull = (text) => {
   return new Promise((resolve) => {
     const regEx = new RegExp(text, "i");
-    const result = [];
+    const result = {};
 
     fs.readFile("server/text.txt", "utf8", function (err, contents) {
       console.log(err);
@@ -31,7 +31,11 @@ const searchFull = (text) => {
         if (line && line.search(regEx) >= 0) {
           if (i < 134) return;
           console.log(`line: ${i}`);
-          result.push({ text: line, line: i, book: getBookName(i) });
+          result[getBookName(i)] = [
+            ...(result[getBookName(i)] || []),
+            { text: line, line: i },
+          ];
+          // result.push({ text: line, line: i, book: getBookName(i) });
         }
       });
       console.log("finished search");
